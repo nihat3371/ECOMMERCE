@@ -1,5 +1,7 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons"
+import { useState } from "react";
 import styled from "styled-components"
+import { sliderItems } from "../data";
 
 const Container = styled.div`
     width: 100%;
@@ -31,7 +33,7 @@ const Arrow = styled.div`
 const Wrapper = styled.div`
     height: 100%;
     display: flex;
-    transform:translateX(0vw)
+    transform:translateX(${props=>props.slideIndex * -100}vw);
 `;
 
 const Slide = styled.div`
@@ -44,7 +46,8 @@ const Slide = styled.div`
 `;
 
 const ImgContainer = styled.div`
-    height: 100%;
+    height: 50%;
+    width: 100%
     flex: 1;
 `;
 
@@ -58,7 +61,7 @@ const InfoContainer = styled.div`
     padding: 50px;
 `;
 
-const title = styled.h1`
+const Title = styled.h1`
     font-size: 70px;
 `;
 const Desc = styled.p`
@@ -77,50 +80,33 @@ const Button = styled.button`
 export const Slider = () => {
 
         const [slideIndex, setslideIndex] = useState(0);
-        const handleClick = (direction) =>{}
+        const handleClick = (direction) =>{
+            if(direction=== "left"){
+                setslideIndex(slideIndex > 0 ? slideIndex-1 : 2)
+            } else {
+                setslideIndex(slideIndex < 2 ? slideIndex +1 : 0)
+            }
+        };
 
     return (
         <Container>
             <Arrow direction="left" onClick={()=>handleClick("left")} >
                 <ArrowLeftOutlined/>
             </Arrow >
-            <Wrapper>
-            <Slide bg = "f5fafd">
-
-                
-            <ImgContainer>
-            <Image src ="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
-             </ImgContainer>
-                <InfoContainer>
-                    <title>SUMMER SALE</title>
-                    <Desc>DON'T COMPROMISE ON STLYE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
-                    <Button>SHOW NOW</Button>
-                    </InfoContainer>
-            </Slide>
-            <Slide bg = "fcf1ed">
-
-                
-            <ImgContainer>
-             <Image src ="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
-              </ImgContainer>
-                <InfoContainer>
-                    <title>WINTER SALE</title>
-                    <Desc>DON'T COMPROMISE ON STLYE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
-                    <Button>SHOW NOW</Button>
-                    </InfoContainer>
-                </Slide>
-            <Slide bg = "fbf0f4" >
-
-                
-<ImgContainer>
-<Image src ="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
-</ImgContainer>
-<InfoContainer>
-    <title>POPULAR SALE</title>
-    <Desc>DON'T COMPROMISE ON STLYE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
-    <Button>SHOW NOW</Button>
-</InfoContainer>
-</Slide>
+            <Wrapper slideIndex={slideIndex}>
+                {sliderItems.map(item=>(
+                 <Slide bg = {item.bg}>
+                     <ImgContainer>
+                      <Image src ={item.img} />
+                      </ImgContainer>
+                      <InfoContainer>
+                          <Title>{item.title}</Title>
+                          <Desc>{item.desc}</Desc>
+                          <Button>SHOW NOW</Button>
+                          </InfoContainer>
+                          </Slide>
+                ))}
+            
             </Wrapper>
             <Arrow direction="right" onClick={()=>handleClick("right")} >
                 <ArrowRightOutlined/>

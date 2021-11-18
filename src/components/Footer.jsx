@@ -2,10 +2,11 @@ import { Facebook, Instagram, Pinterest, Twitter } from "@material-ui/icons";
 import styled from "styled-components";
 
 const Container = styled.div`
-    display:flex;
+    display: flex;
+    
 `;
 const Left = styled.div`
-    flex:1;
+    flex: 1;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -18,17 +19,26 @@ const Desc = styled.p`
     margin: 20px 0px ;
 `;
 const SocialContainer = styled.div`
-    display:flex;
+    display: flex;
+
 `;
 const SocialIcon = styled.div`
-
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+    background-color: #${props=>props.color};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
 `;
 
 const Center = styled.div`
-    flex:1;
+    flex: 1;
 `;
 const Right = styled.div`
-    flex:1;
+    flex: 1;
 `;
 
 const Footer = () => {
@@ -37,24 +47,23 @@ const Footer = () => {
             <Left>
                 <Logo>DUKE.</Logo>
                 <Desc>here are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</Desc>
-            </Left>
-            <SocialContainer>
-                <SocialIcon>
+                <SocialContainer>
+                <SocialIcon color="3B5999">
                     <Facebook/>
                 </SocialIcon>
-                <SocialIcon>
+                <SocialIcon color="E4405f">
                     <Instagram/>
                 </SocialIcon>
-                <SocialIcon>
+                <SocialIcon color= "55ACEE">
                     <Twitter/>
                 </SocialIcon>
-                <SocialIcon>
+                <SocialIcon color= "E60023">
                     <Pinterest/>
                 </SocialIcon>
             </SocialContainer>
+            </Left>
             <Center></Center>
             <Right></Right>
-            
         </Container>
     )
 }

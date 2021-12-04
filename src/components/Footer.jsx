@@ -120,7 +120,7 @@ const Footer = () => {
                 <ContactItem ><MailOutline style={{marginRight:"10px"}} />
                     nihat3371@hotmail.com
                 </ContactItem>
-                <Payment src="https://acsmedya.com/wp-content/uploads/2021/01/payments.png"/>
+                <Payment src="https://www.citypng.com/public/uploads/preview/-11597193844xtj2mnv37b.png"/>
             </Right>
         </Container>
     )

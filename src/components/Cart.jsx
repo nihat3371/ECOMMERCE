@@ -1,3 +1,4 @@
+import { Add, Remove } from '@material-ui/icons';
 import styled from 'styled-components'
 import Announcement from './Announcement'
 import Footer from './Footer'
@@ -101,13 +102,61 @@ const PriceDetail = styled.div`
     justify-content: center;
 `;
 
+const ProductAmountContainer = styled.div`
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+`;
+
+const ProductAmount = styled.div`
+    font-size: 24px;
+    margin: 5px;
+`;
+
+const ProductPrice = styled.div`
+    font-size: 30px;
+    font-weight: 200;
+`;
+
+const Hr = styled.hr`
+    background-color: #eee;
+    border: none;
+    height: 1px;
+`;
+
 const Summary = styled.div`
     flex:1;
+    border: 0.5px solid lightgray;
+    border-radius: 10px;
+    padding: 20px;
+    height: 50vh;
 `;
 
-const ProductAmountContainer = styled.div`
+const SummaryTitle = styled.h1`
+    font-weight: 200; 
+`;
+const SummaryItem = styled.div`
+    margin: 30px 0px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: ${props=>props.type === "total" && "500"};
+    font-size: ${props=>props.type === "total" && "24px"};
+`;
+const SummaryItemText = styled.span`
 
 `;
+const SummaryItemPrice = styled.span`
+
+`;
+const Button = styled.button`
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+`;
+
+
 
 const Cart = () => {
     return (
@@ -128,7 +177,7 @@ const Cart = () => {
                     <Info>
                         <Product>
                             <ProductDetail>
-                                <Image src='https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'/>
+                                <Image src='https://static.wixstatic.com/media/e368cf_a6ce171c28cd4edc846284d6a30685ce~mv2.jpg/v1/fit/w_320,h_243,q_90/e368cf_a6ce171c28cd4edc846284d6a30685ce~mv2.jpg'/>
                                 <Details>
                                     <ProductName><b>Product:</b> JESSIE THUNDER SHOES</ProductName>
                                     <ProductId><b>ID:</b> 9233567862</ProductId>
@@ -138,12 +187,55 @@ const Cart = () => {
                             </ProductDetail>
                             <PriceDetail>
                                 <ProductAmountContainer>
-                                    
+                                    <Add/>
+                                    <ProductAmount>2</ProductAmount>
+                                    <Remove/>
                                 </ProductAmountContainer>
+                                <ProductPrice>$ 30</ProductPrice>
                             </PriceDetail>
                         </Product>
+                        <Hr/>
+                        <Product>
+                            <ProductDetail>
+                                <Image src='https://uploads-ssl.webflow.com/5d556af3fe21d65f602dca94/5de6b108ad4032fb5b9a330a_kqKnO3wDnlvQ.png'/>
+                                <Details>
+                                    <ProductName><b>Product:</b> HAKURA T-SHIRT</ProductName>
+                                    <ProductId><b>ID:</b> 9233567862</ProductId>
+                                    <ProductColor color="gray"/>
+                                    <ProductSize><b>Size:</b> M</ProductSize>
+                                </Details>
+                            </ProductDetail>
+                            <PriceDetail>
+                                <ProductAmountContainer>
+                                    <Add/>
+                                    <ProductAmount>2</ProductAmount>
+                                    <Remove/>
+                                </ProductAmountContainer>
+                                <ProductPrice>$ 30</ProductPrice>
+                            </PriceDetail>
+                        </Product>
+                        
                     </Info>
-                    <Summary>summary</Summary>
+                    <Summary>
+                        <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+                        <SummaryItem>
+                            <SummaryItemText>Subtotal</SummaryItemText>
+                            <SummaryItemPrice>$ 80</SummaryItemPrice>
+                        </SummaryItem>
+                        <SummaryItem>
+                            <SummaryItemText>ESTIMATED SHIPPING</SummaryItemText>
+                            <SummaryItemPrice>$ 5.90</SummaryItemPrice>
+                        </SummaryItem>
+                        <SummaryItem>
+                            <SummaryItemText>SHIPPING DISCOUNT</SummaryItemText>
+                            <SummaryItemPrice>$ -5.90</SummaryItemPrice>
+                        </SummaryItem>
+                        <SummaryItem type="total">
+                            <SummaryItemText>Total</SummaryItemText>
+                            <SummaryItemPrice>$ 80</SummaryItemPrice>
+                        </SummaryItem>
+                        <Button>CHECKOUT NOW</Button>
+                    </Summary>
                 </Bottom>
             </Wrapper>
             <Footer/>

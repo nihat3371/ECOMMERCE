@@ -28,12 +28,14 @@ const InputContainer = styled.div`
     justify-content: space-between;
     border: 1px solid lightgray;
     ${mobile({width:"80%"})}
+    
 `;
 const Input = styled.input`
     border: none;
     flex:12;
     padding-left: 20px;
     font-size: 24px;
+    ${mobile({textAlign:"center", fontSize: "20px"})}
 `;
 const Button = styled.button`
     flex:1;

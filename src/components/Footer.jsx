@@ -62,7 +62,7 @@ const ListItem = styled.li`
 const Right = styled.div`
     flex: 1;
     padding: 20px;
-    ${mobile({backgroundColor:"#eee8f8"})}
+    ${mobile({backgroundColor:"white"})}
 `;
 
 const ContactItem = styled.div`
@@ -116,7 +116,7 @@ const Footer = () => {
             <Right>
                 <Title>Contact</Title>
                 <ContactItem><Room style={{marginRight:"10px"}} />
-                    İzmir, Bayraklı- bla bla caddesi 
+                Konak/İzmir , Akdeniz, Şht. Fethi Bey Cd.
                 </ContactItem>
                 <ContactItem><Phone style={{marginRight:"10px"}} />
                     +90 123 456 78 90

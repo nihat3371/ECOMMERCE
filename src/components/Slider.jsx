@@ -6,9 +6,9 @@ import { mobile } from "../responsive";
 
 const Container = styled.div`
     width: 100%;
-    height:100vh;
+    height: 100vh;
     display:flex;
-    position: relative:
+    position: relative;
     overflow: hidden;
     ${mobile({display:"none"})}
 `

@@ -63,7 +63,7 @@ export const popularProducts = [
   },
   {
     id: 6,
-    img: "https://d5nunyagcicgy.cloudfront.net/external_assets/resources/clothing_photography_tops_pants_and_the_like_v3/flat-lay-example.jpg",
+    img: "",
   },
   {
     id: 7,
@@ -71,6 +71,6 @@ export const popularProducts = [
   },
   {
     id: 8,
-    img: "https://images.squarespace-cdn.com/content/v1/528f8b33e4b01f2a315145b2/1473165174041-ELTK3U8JIOQRWBV330P7/static1.squarespace-13.jpg",
+    img: "",
   },
 ];

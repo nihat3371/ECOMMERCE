@@ -82,7 +82,7 @@ const Footer = () => {
         <Container>
             <Left>
                 <Logo>DUKE.</Logo>
-                <Desc>here are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</Desc>
+                <Desc><b>Duke, önlenemez moda tutkusuyla CAGLAR sanat ortakliğinin bir eseridir. Ürünlerinin hepsi Vegan ve üst kalite olan Duke, hedef kitlesi üst düzey müşterilerin hizmetine sunulmuştur. Eğer burdaysaniz ve bunu okuyorsaniz tebrikler. Duke sizi seçmiş demektir. Elit alişveriş deneyimini yaşarken keyfinize bakin. DUKE</b> </Desc>
                 <SocialContainer>
                 <SocialIcon color="3B5999">
                     <Facebook/>

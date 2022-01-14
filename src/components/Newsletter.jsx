@@ -34,7 +34,7 @@ const Input = styled.input`
     border: none;
     flex:12;
     padding-left: 20px;
-    font-size: 24px;
+    font-size: 20px;
     ${mobile({textAlign:"center", fontSize: "20px"})}
 `;
 const Button = styled.button`
